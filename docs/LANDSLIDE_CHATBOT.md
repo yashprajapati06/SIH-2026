@@ -90,6 +90,14 @@ $env:PLAYWRIGHT_BROWSERS_PATH = '../../.playwright-browsers'
 node node_modules/@playwright/test/cli.js test --config playwright.chatbot.config.ts
 ```
 
-## Updating the knowledge
+## Floating widget in a separate repository
+
+The shared app provider also mounts the bottom-right **Sentinel Mini** launcher. Its popup, assets and public-data API are maintained independently at [yashprajapati06/sentinel-landslide-chatbot](https://github.com/yashprajapati06/sentinel-landslide-chatbot). The existing `/chatbot` page remains available.
+
+Run that repository's Python service on port 8046 for a local preview. For deployment, set `NEXT_PUBLIC_CHATBOT_URL` to the service's HTTPS origin **before building this frontend**. It loads `/static/embed.js`; the widget isolates its layout using Shadow DOM and an iframe. If that script fails, the launcher links to `/chatbot`. The separate service exposes only the public GSI corpus and reviewed guidance, with no main-app accounts or operational data.
+
+Widget validation: 14 standalone API tests passed; real desktop and mobile browser flows passed, including counts, citations, close/reopen, keyboard focus, reset, errors and retry. Its launcher was verified on this app's home, chatbot and login routes. The updated standard Next.js production build, type checks and lint passed (seven existing warnings). The full pre-existing suites were not repeated for this presentation-only integration.
+
+## Refreshing the original knowledge endpoint
 
 Edit reviewed explanatory articles with supporting source URLs in `knowledge.json`. For inventory changes, validate the replacement extraction, update the checksum and corpus-specific expected counts, then rerun the GSI validation and chatbot tests before release. Restart the API to rebuild its cache. Adding files alone does not train an AI model or update a running cache. Future support for complete report text or an LLM requires a separately reviewed ingestion/retrieval layer; neither is claimed here.

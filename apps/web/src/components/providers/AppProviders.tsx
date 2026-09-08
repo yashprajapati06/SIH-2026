@@ -9,6 +9,7 @@ import { useI18nStore } from "@/lib/i18n";
 import { useThemeStore } from "@/lib/theme";
 import { AuthGuard } from "@/components/auth/AuthGuard";
 import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
+import { FloatingAssistant } from "@/components/chatbot/FloatingAssistant";
 
 export function AppProviders({ children }: { children: React.ReactNode }) {
   const [queryClient] = useState(() => createQueryClient());
@@ -28,6 +29,7 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
           </AuthGuard>
         </AnalyticsProvider>
       </Suspense>
+      <FloatingAssistant />
     </QueryClientProvider>
   );
 }
