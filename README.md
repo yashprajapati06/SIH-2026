@@ -17,6 +17,10 @@
 
 </div>
 
+## Chatbot and Spatial Map integration
+
+This fork's **main** branch includes the GSI historical map layer, source data, full-page landslide assistant and the integration for the separate floating chatbot. Start with the [integration guide for the website maintainer](docs/INTEGRATION_HANDOFF.md). The standalone chatbot is maintained at [yashprajapati06/sentinel-landslide-chatbot](https://github.com/yashprajapati06/sentinel-landslide-chatbot).
+
 ---
 
 ## The Problem
