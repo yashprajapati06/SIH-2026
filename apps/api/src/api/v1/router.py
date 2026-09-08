@@ -9,6 +9,7 @@ from src.api.v1.actions import router as actions_router
 from src.api.v1.assets import router as assets_router
 from src.api.v1.audit import router as audit_router
 from src.api.v1.auth import router as auth_router
+from src.api.v1.chatbot import router as chatbot_router
 from src.api.v1.consequences import router as consequences_router
 from src.api.v1.districts import router as districts_router
 from src.api.v1.health import router as health_router
@@ -33,6 +34,7 @@ api_v1_router = APIRouter(prefix="/api/v1")
 # Active Stage 1 & Stage 2 Endpoints
 api_v1_router.include_router(health_router)
 api_v1_router.include_router(auth_router)
+api_v1_router.include_router(chatbot_router)
 api_v1_router.include_router(users_router)
 api_v1_router.include_router(organizations_router)
 api_v1_router.include_router(audit_router)

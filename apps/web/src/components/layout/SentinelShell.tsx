@@ -37,6 +37,7 @@ import {
   ChevronDown,
   ChevronRight,
   SlidersHorizontal,
+  MessageCircle,
 } from "lucide-react";
 import { useAuthStore } from "@/lib/auth";
 import { useTranslation } from "@/lib/i18n";
@@ -85,6 +86,13 @@ export const NAV_GROUPS: NavGroup[] = [
     badge: "3D GIS",
     badgeType: "blue",
     items: [
+      {
+        label: "Landslide Assistant",
+        translationKey: "nav.chatbot",
+        href: "/chatbot",
+        icon: MessageCircle,
+        description: "Ask questions about historical landslides and GSI studies",
+      },
       {
         label: "Command Center",
         translationKey: "nav.commandCenter",

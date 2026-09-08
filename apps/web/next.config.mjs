@@ -2,7 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
-  output: "standalone",
+  // Standard server builds support Windows without symlink privileges.
+  // Docker keeps standalone output unless explicitly disabled for a local run.
+  output: process.env.NEXT_STANDALONE === "0" ? undefined : "standalone",
   eslint: {
     // Stage 1 clean linting checked in CI
     ignoreDuringBuilds: false,

@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-08",
+  "branch": "feature/landslide-chatbot",
+  "environment": "Local Windows; Python 3.12.14, Node 24.19.0, MongoDB 8.0.30",
+  "backend_regression": {"passed": 290, "skipped": 1, "failed": 0, "skip": "Live AWS S3 test requires credentials"},
+  "chatbot_backend_final_recheck": {"passed": 21, "failed": 0},
+  "frontend_units": {"passed": 98, "failed": 0},
+  "chatbot_frontend_final_recheck": {"passed": 4, "failed": 0},
+  "chatbot_browser_final": {"passed": 4, "failed": 0, "projects": ["Desktop Chrome", "Mobile Chrome"], "uses_real_local_api": true},
+  "typescript": "PASS",
+  "lint": {"status": "PASS", "pre_existing_warnings": 7},
+  "production_server_build": "PASS with NEXT_STANDALONE=0",
+  "standalone_windows_packaging": "Blocked by Windows EPERM symbolic-link permissions; Docker standalone packaging not validated",
+  "existing_46_case_browser_suite": "Not rerun; see the separate baseline validation report",
+  "corpus": {"historical_rows": 11022, "study_references": 428, "states": 8, "reviewed_articles": 8},
+  "implementation": "Local indexed retrieval and computed counts; no external LLM or model training",
+  "limits": ["Full study PDF text is not indexed", "No live alerts, private operational records or forecast probabilities", "Public deployment not performed"]
+}

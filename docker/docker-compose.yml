@@ -19,6 +19,7 @@ services:
       - redis
     volumes:
       - ../apps/api:/app
+      - ../data/gsi:/app/data/gsi:ro
     restart: unless-stopped
 
   web:

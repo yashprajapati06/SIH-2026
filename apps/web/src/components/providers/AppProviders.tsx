@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { createQueryClient } from "@/lib/query-client";
 import { SentinelShell } from "@/components/layout/SentinelShell";
@@ -21,11 +21,13 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <AnalyticsProvider>
-        <AuthGuard>
-          <SentinelShell>{children}</SentinelShell>
-        </AuthGuard>
-      </AnalyticsProvider>
+      <Suspense fallback={<div role="status" className="p-8 text-sm">Loading Sentinel NER…</div>}>
+        <AnalyticsProvider>
+          <AuthGuard>
+            <SentinelShell>{children}</SentinelShell>
+          </AuthGuard>
+        </AnalyticsProvider>
+      </Suspense>
     </QueryClientProvider>
   );
 }

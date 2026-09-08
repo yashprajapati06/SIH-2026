@@ -28,6 +28,8 @@ RUN groupadd -r sentinel && useradd -r -g sentinel -d /app sentinel
 
 COPY --from=builder /root/.local /root/.local
 COPY apps/api/src ./src
+COPY data/gsi ./data/gsi
+ENV CHATBOT_DATA_DIR=/app/data/gsi
 
 RUN chown -R sentinel:sentinel /app
 

@@ -124,6 +124,11 @@ export const TRANSLATIONS: Translations = {
     hi: "जोखिम मॉडल इंजन",
     mizo: "Dinhmun Hlauthawng",
   },
+  "nav.chatbot": {
+    en: "Landslide Assistant",
+    hi: "भूस्खलन सहायक",
+    mizo: "Landslide Assistant",
+  },
   "nav.creepWatch": {
     en: "Creep Watch",
     hi: "इनसार क्रीप वॉच",

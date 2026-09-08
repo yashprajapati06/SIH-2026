@@ -1,0 +1,61 @@
+{
+  "reviewed_on": "2026-09-08",
+  "articles": [
+    {
+      "id": "basics", "title": "What is a landslide?",
+      "keywords": "what is landslide definition meaning kya hota bhuskhalan भूस्खलन क्या मतलब",
+      "en": "A landslide happens when rock, soil or debris moves downhill under gravity. It can move slowly or rapidly. A historical landslide record describes an observation; it does not tell you whether the slope is safe today.",
+      "hinglish": "Landslide mein pathar, mitti ya debris gravity ki wajah se slope se neeche move karta hai. Movement slow ya fast ho sakta hai. Purana landslide record aaj slope safe hone ka proof nahi hai.",
+      "url": "https://www.usgs.gov/faqs/what-a-landslide-and-what-causes-one"
+    },
+    {
+      "id": "causes", "title": "Why landslides happen",
+      "keywords": "causes cause why rain rainfall earthquake trigger erosion kyu kyun barish wajah reason कारण बारिश",
+      "en": "Rainfall, changing groundwater, erosion, earthquakes and disturbance from construction can contribute to slope failure. Often several factors act together. The cause of a particular event needs site evidence.",
+      "hinglish": "Barish, groundwater mein badlav, erosion, earthquake aur construction slope failure mein contribute kar sakte hain. Aksar multiple factors hote hain. Kisi specific landslide ka cause batane ke liye site evidence chahiye.",
+      "url": "https://www.usgs.gov/faqs/what-a-landslide-and-what-causes-one"
+    },
+    {
+      "id": "types", "title": "Landslide movement types",
+      "keywords": "types type rockfall fall topple flow debris slide spread creep difference prakar प्रकार",
+      "en": "Landslide movement includes falls, topples, slides, spreads and flows. Material may be rock, debris or earth. The inventory preserves its published material and movement labels.",
+      "hinglish": "Movement mein falls, topples, slides, spreads aur flows aate hain. Material rock, debris ya earth ho sakta hai. Inventory ke material aur movement labels source ke hisaab se dikhte hain.",
+      "url": "https://www.usgs.gov/faqs/what-a-landslide-and-what-causes-one"
+    },
+    {
+      "id": "safety", "title": "Landslide safety guidance — NIDM, page 16",
+      "keywords": "safety safe emergency danger evacuation stuck happening help precautions protect bachao bachna kya karu kya kare suraksha landslide hui बचाव सुरक्षा",
+      "en": "If a slide is happening, move away from its path as quickly as possible and inform local district authorities. Keep away from the slide area because more material may fall. Follow official evacuation directions. This chatbot cannot assess a safe route or dispatch responders.",
+      "hinglish": "Landslide ho rahi ho to uske path se jaldi door ho aur local district authority ko inform karo. Slide area mein dobara mat jao; aur material gir sakta hai. Official evacuation instructions follow karo. Chatbot safe route assess ya rescue dispatch nahi karta.",
+      "url": "https://www.nidm.gov.in/PDF/IEC/Dosnewnidm.pdf#page=16"
+    },
+    {
+      "id": "signs", "title": "Warning signs — NIDM, page 16",
+      "keywords": "signs sign warning cracks sound rumbling stream muddy pehchan sanket lakshan संकेत पहचान दरार",
+      "en": "Unusual sounds from moving debris, cracking trees or colliding boulders can indicate danger. Sudden changes in stream flow or muddy water can also be warning signs. Keep away from the slide path and notify local authorities.",
+      "hinglish": "Debris ki unusual awaaz, ped crack hona ya pathar takrana danger ke signs ho sakte hain. Stream ka flow achanak badalna ya pani muddy hona bhi signal ho sakta hai. Slide path se door raho aur authority ko inform karo.",
+      "url": "https://www.nidm.gov.in/PDF/IEC/Dosnewnidm.pdf#page=16"
+    },
+    {
+      "id": "data", "title": "What data the assistant can search",
+      "keywords": "data dataset source csv json pdf gsi bhusanket where from kidhr kahan liya format available coverage",
+      "en": "The assistant searches 11,022 extracted GSI historical inventory rows and 428 Northeast study references. Inventory fields include state, historical district, slide name, location, coordinates, material, movement and raw history. Study references include titles and PDF links; full report text is not indexed. Two coordinate records are flagged. Source dates may be missing, approximate or contain several events.",
+      "hinglish": "Assistant 11,022 GSI historical inventory rows aur 428 Northeast study references search karta hai. State, purana district label, slide name, location, coordinates, material, movement aur raw history available hain. Study titles aur PDF links hain; har report ka full text indexed nahi hai. Do coordinate records flagged hain. Dates missing, approximate ya multiple ho sakti hain.",
+      "url": "https://github.com/yashprajapati06/SIH-2026/blob/data/northeast-validation/data/gsi/README.md"
+    },
+    {
+      "id": "model", "title": "Risk model inputs and limitations",
+      "keywords": "model ai training train test prediction predict soil slope angle permeability drainage road risk engine probability machine learning mitti dhalan",
+      "en": "The project's feature builder expects recent historical-event density, slope angle, road proximity, drainage density and soil permeability. This historical inventory does not supply all these features. Importing rows does not train the model. A defensible prediction also needs validated observations, suitable labels and separate evaluation data. The assistant does not calculate a current landslide probability.",
+      "hinglish": "Project ka feature builder recent event density, slope angle, road proximity, drainage density aur soil permeability use karta hai. Is historical inventory mein saare inputs nahi hain. Data import karna model training nahi hai. Prediction ke liye validated observations, suitable labels aur alag evaluation data chahiye. Assistant current landslide probability calculate nahi karta.",
+      "url": "https://github.com/yashprajapati06/SIH-2026/blob/data/northeast-validation/apps/api/src/core/risk/features.py"
+    },
+    {
+      "id": "community", "title": "Community reports and verification",
+      "keywords": "community citizen local photo upload report submit verification verify officer authority verified acknowledgement rationale notification alerts bhej",
+      "en": "Use Field & Community to submit an observation with location and evidence. A submitted report is not automatically verified: an authorized human reviews it through the moderation workflow. This assistant searches the public reference dataset only. It cannot inspect private citizen reports, approve actions, send alerts or confirm an incident from a photograph.",
+      "hinglish": "Field & Community page par location aur evidence ke saath observation submit hota hai. Submitted report automatically verified nahi hoti; authorized officer moderation workflow mein review karta hai. Yeh assistant public reference data search karta hai. Private citizen reports dekhna, action approve karna, alerts bhejna ya photo se incident confirm karna iska kaam nahi hai.",
+      "url": "https://github.com/yashprajapati06/SIH-2026/blob/data/northeast-validation/apps/api/src/api/v1/community.py"
+    }
+  ]
+}
