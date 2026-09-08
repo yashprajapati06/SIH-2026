@@ -1,6 +1,6 @@
 # Northeast GSI data snapshot
 
-This folder contains historical data for all eight Northeast states, prepared for isolated validation against Sentinel NER. It does not automatically load records into the running website.
+This folder contains historical data for all eight Northeast states. It supplies the chatbot and the separate **GSI historical landslides** overlay on `/map`. It does not import these reference rows as operational events. [Map layer and coordinate flags](../../docs/GSI_HISTORICAL_MAP.md).
 
 | File | Format | Contents |
 | --- | --- | --- |
@@ -58,6 +58,6 @@ with gzip.open("data/gsi/northeast_inventory.json.gz", "rt", encoding="utf-8") a
 
 ## What this supports next
 
-The GeoJSON is suitable for a labelled historical-inventory map overlay after review. Production event import needs reviewed date handling and mappings to the website's current districts. Slope geometry/angle, road distance, drainage, soil permeability and current observations must come from separately documented sources before evaluating the risk model. Importing these historical records does not train the model, validate forecasts or issue public alerts.
+The website now renders a labelled historical-inventory overlay with state/district filters and a separate flagged-coordinate list. Production event import still needs reviewed date handling and mappings to the website's current districts. Slope geometry/angle, road distance, drainage, soil permeability and current observations must come from separately documented sources before evaluating the risk model. Displaying these historical records does not train the model, validate forecasts or issue public alerts.
 
 See [test results and reproduction instructions](../../validation/README.md).

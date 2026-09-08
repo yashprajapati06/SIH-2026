@@ -95,9 +95,10 @@ const MOCK_EVENT: LandslideEvent = {
 };
 
 describe("Sentinel NER — Stage 4 Geospatial UI Unit Tests", () => {
-  it("renders MapLayerControl with all 7 entity layers and count indicators", () => {
+  it("renders historical and operational layers with counts and independent toggles", () => {
     const onToggle = vi.fn();
     const visibleLayers = {
+      gsi_history: true,
       districts: true,
       slope_units: true,
       roads: true,
@@ -107,6 +108,7 @@ describe("Sentinel NER — Stage 4 Geospatial UI Unit Tests", () => {
       landslide_events: true,
     };
     const counts = {
+      gsi_history: 11020,
       districts: 2,
       slope_units: 5,
       roads: 3,
@@ -125,7 +127,9 @@ describe("Sentinel NER — Stage 4 Geospatial UI Unit Tests", () => {
     );
 
     // Verify header and layer items
-    expect(screen.getByText(/OPERATIONAL LAYERS/i)).toBeDefined();
+    expect(screen.getByText(/MAP LAYERS/i)).toBeDefined();
+    expect(screen.getByText("GSI History")).toBeDefined();
+    expect(screen.getByTitle("11020 loaded entities")).toBeDefined();
     expect(screen.getByText("Districts")).toBeDefined();
     expect(screen.getByText("Slope Units")).toBeDefined();
     expect(screen.getByText("Roads")).toBeDefined();
@@ -135,6 +139,11 @@ describe("Sentinel NER — Stage 4 Geospatial UI Unit Tests", () => {
     expect(screen.getByText("Landslide Events")).toBeDefined();
     expect(screen.getByText("InSAR Change Evidence")).toBeDefined();
     expect(screen.getByText("Consequence Relationships")).toBeDefined();
+
+    const historyCheckbox = screen.getByLabelText(/Toggle GSI History layer/i);
+    expect((historyCheckbox as HTMLInputElement).checked).toBe(true);
+    fireEvent.click(historyCheckbox);
+    expect(onToggle).toHaveBeenCalledWith("gsi_history");
 
     // Toggle layer
     const roadsCheckbox = screen.getByLabelText(/Toggle Roads layer/i);

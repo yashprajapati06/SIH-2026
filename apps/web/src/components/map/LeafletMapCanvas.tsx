@@ -5,6 +5,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { AlertTriangle, Info } from "lucide-react";
 import { getBasemapConfig } from "@/lib/basemap";
+import { HistoricalPoint } from "@/lib/gsi-history";
 import {
   District,
   SlopeUnit,
@@ -28,6 +29,9 @@ interface LeafletMapCanvasProps {
   villages: Village[];
   assets: Asset[];
   landslideEvents: LandslideEvent[];
+  historicalPoints?: HistoricalPoint[];
+  selectedHistoricalId?: number | null;
+  onSelectHistorical?: (id: number) => void;
   visibleLayers: Record<string, boolean>;
   selectedDistrictId?: string;
   selectedEntity: SelectedEntity | null;
@@ -97,6 +101,9 @@ export default function LeafletMapCanvas({
   villages,
   assets,
   landslideEvents,
+  historicalPoints = [],
+  selectedHistoricalId = null,
+  onSelectHistorical,
   visibleLayers,
   selectedDistrictId = "",
   selectedEntity,
@@ -115,6 +122,7 @@ export default function LeafletMapCanvas({
   const layerGroupsRef = useRef<{ [key: string]: L.LayerGroup }>({});
   const nearbyCircleRef = useRef<L.Circle | null>(null);
   const [basemapError, setBasemapError] = useState(false);
+  const [historicalMarkerCount, setHistoricalMarkerCount] = useState(0);
 
   const onMapClickRef = useRef(onMapClick);
   useEffect(() => {
@@ -172,9 +180,14 @@ export default function LeafletMapCanvas({
       landslide_events: L.layerGroup().addTo(map),
       insar_deformation: L.layerGroup().addTo(map),
       consequences: L.layerGroup().addTo(map),
+      gsi_history: L.layerGroup().addTo(map),
     };
     layerGroupsRef.current = groups;
     mapRef.current = map;
+    const historyPane = map.createPane("gsiHistoryPane");
+    historyPane.style.zIndex = "450";
+    const resizeObserver = new ResizeObserver(() => map.invalidateSize());
+    resizeObserver.observe(containerRef.current);
 
     // Handle Map Click for spatial querying
     map.on("click", (e: L.LeafletMouseEvent) => {
@@ -182,6 +195,7 @@ export default function LeafletMapCanvas({
     });
 
     return () => {
+      resizeObserver.disconnect();
       try {
         map.stop();
         (map as any)._animatingZoom = false;
@@ -198,6 +212,41 @@ export default function LeafletMapCanvas({
     basemapConfig.subdomains,
     basemapConfig.className,
   ]);
+
+  // Public historical observations use a canvas, avoiding 11,000 DOM markers.
+  useEffect(() => {
+    const map = mapRef.current;
+    const group = layerGroupsRef.current.gsi_history;
+    if (!map || !group) return;
+    group.clearLayers();
+    setHistoricalMarkerCount(0);
+    if (!visibleLayers.gsi_history) return;
+    const renderer = L.canvas({ pane: "gsiHistoryPane", padding: 0.3 });
+    const bounds = L.latLngBounds([]);
+    let count = 0;
+    for (const point of historicalPoints) {
+      if (!Number.isFinite(point.latitude) || !Number.isFinite(point.longitude) || Math.abs(point.latitude) > 90 || Math.abs(point.longitude) > 180) continue;
+      const position: [number, number] = [point.latitude, point.longitude];
+      const marker = L.circleMarker(position, { renderer, radius: 4, color: "#6d28d9", fillColor: "#8b5cf6", fillOpacity: 0.65, weight: 1, bubblingMouseEvents: false });
+      const label = document.createElement("span");
+      label.textContent = `${point.name} · ${point.district}, ${point.state} · GSI historical record`;
+      marker.bindTooltip(label, { direction: "top" });
+      marker.on("click", () => onSelectHistorical?.(point.id));
+      group.addLayer(marker); bounds.extend(position); count++;
+    }
+    setHistoricalMarkerCount(count);
+    if (bounds.isValid()) map.fitBounds(bounds, { padding: [30, 30], maxZoom: 11, animate: false });
+    return () => { group.clearLayers(); renderer.remove(); };
+  }, [historicalPoints, visibleLayers.gsi_history, onSelectHistorical]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    const point = historicalPoints.find(p => p.id === selectedHistoricalId);
+    if (!map || !point || !visibleLayers.gsi_history) return;
+    const marker = L.circleMarker([point.latitude, point.longitude], { radius: 9, color: "#4c1d95", fillColor: "#fbbf24", fillOpacity: 1, weight: 3, interactive: false }).addTo(map);
+    map.setView([point.latitude, point.longitude], Math.max(map.getZoom(), 12), { animate: false });
+    return () => { marker.remove(); };
+  }, [selectedHistoricalId, historicalPoints, visibleLayers.gsi_history]);
 
   // Dynamic Viewport Adjustment: Pan & Zoom to Selected District or Full North East Region
   useEffect(() => {
@@ -639,6 +688,8 @@ export default function LeafletMapCanvas({
         </div>
       )}
 
+      {visibleLayers.gsi_history && <div data-testid="gsi-map-status" data-marker-count={historicalMarkerCount} className="absolute left-3 top-3 z-[450] rounded-md border border-violet-200 bg-white/95 px-3 py-2 text-xs font-semibold text-violet-800 shadow-sm" role="status">● {historicalMarkerCount.toLocaleString()} GSI historical points</div>}
+
       {/* Graceful Basemap Error Indicator (Operational layers remain unaffected) */}
       {basemapError && (
         <div
@@ -654,7 +705,7 @@ export default function LeafletMapCanvas({
       )}
 
       {/* Backend Database Outage / Degraded State Overlay */}
-      {errorMessage && (
+      {errorMessage && historicalMarkerCount === 0 && (
         <div
           role="alert"
           aria-live="assertive"
@@ -685,7 +736,7 @@ export default function LeafletMapCanvas({
       )}
 
       {/* Valid query returned 0 entities indicator */}
-      {!errorMessage && !isLoading && (districts.length + slopeUnits.length + roads.length + villages.length + assets.length + landslideEvents.length === 0) && (
+      {!errorMessage && !isLoading && historicalMarkerCount === 0 && (districts.length + slopeUnits.length + roads.length + villages.length + assets.length + landslideEvents.length === 0) && (
         <div
           role="status"
           aria-live="polite"

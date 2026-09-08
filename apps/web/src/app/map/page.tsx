@@ -33,6 +33,11 @@ import MapFilterBar from "@/components/map/MapFilterBar";
 import EntityDetailDrawer from "@/components/map/EntityDetailDrawer";
 import AccessibleEntityList from "@/components/map/AccessibleEntityList";
 import { SelectedEntity } from "@/components/map/LeafletMapCanvas";
+import GsiHistoryPanel from "@/components/map/GsiHistoryPanel";
+import GsiRecordDetails from "@/components/map/GsiRecordDetails";
+import { fetchHistoricalSnapshot, HistoricalSnapshot } from "@/lib/gsi-history";
+
+const NO_HISTORY_POINTS: HistoricalSnapshot["points"] = [];
 
 // Dynamically import Leaflet map to prevent SSR window errors
 const LeafletMapCanvas = dynamic(
@@ -71,6 +76,7 @@ export default function OperationalMapPage() {
     landslide_events: true,
     insar_deformation: true,
     consequences: true,
+    gsi_history: true,
   });
 
   const [selectedDistrictId, setSelectedDistrictId] = useState<string>("");
@@ -82,6 +88,30 @@ export default function OperationalMapPage() {
 
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [history, setHistory] = useState<HistoricalSnapshot | null>(null);
+  const [historyState, setHistoryState] = useState("");
+  const [historyDistrict, setHistoryDistrict] = useState("");
+  const [historyLoading, setHistoryLoading] = useState(true);
+  const [historyError, setHistoryError] = useState<string | null>(null);
+  const [historyRetry, setHistoryRetry] = useState(0);
+  const [selectedHistoricalId, setSelectedHistoricalId] = useState<number | null>(null);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    setHistoryLoading(true); setHistoryError(null); setSelectedHistoricalId(null);
+    fetchHistoricalSnapshot(historyState, historyDistrict, controller.signal).then(data => {
+      if (!controller.signal.aborted) setHistory(data);
+    }).catch(err => {
+      if (!controller.signal.aborted) { setHistoryError(err.message); setHistory(null); }
+    }).finally(() => { if (!controller.signal.aborted) setHistoryLoading(false); });
+    return () => controller.abort();
+  }, [historyState, historyDistrict, historyRetry]);
+
+  const handleSelectHistorical = useCallback((id: number) => {
+    setSelectedEntity(null); setSelectedHistoricalId(id);
+  }, []);
+  const hasSelection = selectedEntity !== null || selectedHistoricalId !== null;
+  const historyPoints = historyLoading ? NO_HISTORY_POINTS : history?.points || NO_HISTORY_POINTS;
 
   // Load Domain Entities from Stage 3 API
   const loadDomainData = useCallback(async () => {
@@ -198,6 +228,7 @@ export default function OperationalMapPage() {
   }, [queryMode, nearbyRadiusMeters]);
 
   const handleSelectEntity = useCallback((entity: SelectedEntity | null) => {
+    setSelectedHistoricalId(null);
     setSelectedEntity(entity);
     if (entity?.type === "district" && entity.data?.id) {
       setSelectedDistrictId(entity.data.id);
@@ -235,6 +266,7 @@ export default function OperationalMapPage() {
     landslide_events: landslideEvents.length,
     insar_deformation: 0,
     consequences: 0,
+    gsi_history: historyPoints.length,
   };
 
   const totalVisibleEntities = Object.entries(layerCounts).reduce(
@@ -253,7 +285,7 @@ export default function OperationalMapPage() {
               Operational Geospatial Map
             </h1>
             <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-50 dark:bg-sky-950 border border-blue-200 dark:border-sky-800 text-gov-blue dark:text-sky-300">
-              Live Spatial Layers
+              Spatial Layers
             </span>
           </div>
           <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
@@ -286,9 +318,13 @@ export default function OperationalMapPage() {
           setSelectedEntity(null);
           setNearbyCenter(null);
           setQueryMode("view");
+          setHistoryState(""); setHistoryDistrict(""); setSelectedHistoricalId(null);
         }}
         totalVisibleEntities={totalVisibleEntities}
       />
+
+      <GsiHistoryPanel data={history} loading={historyLoading} error={historyError} state={historyState} district={historyDistrict} visible={visibleLayers.gsi_history}
+        onState={value => { setHistoryState(value); setHistoryDistrict(""); }} onDistrict={setHistoryDistrict} onSelect={handleSelectHistorical} onRetry={() => setHistoryRetry(v => v + 1)} />
 
       {/* Error Message */}
       {error && (
@@ -320,7 +356,7 @@ export default function OperationalMapPage() {
           </div>
 
           {/* Center Column: Map Canvas */}
-          <div className={`${selectedEntity ? "lg:col-span-2" : "lg:col-span-3"} h-[380px] sm:h-[460px] lg:h-[540px] rounded-lg overflow-hidden border border-slate-200 dark:border-sentinel-800 shadow-sm dark:shadow-2xl bg-white dark:bg-sentinel-950 relative`}>
+          <div className={`${hasSelection ? "lg:col-span-2" : "lg:col-span-3"} h-[380px] sm:h-[460px] lg:h-[540px] rounded-lg overflow-hidden border border-slate-200 dark:border-sentinel-800 shadow-sm dark:shadow-2xl bg-white dark:bg-sentinel-950 relative`}>
             <LeafletMapCanvas
               districts={districts}
               slopeUnits={slopeUnits}
@@ -329,6 +365,9 @@ export default function OperationalMapPage() {
               villages={villages}
               assets={assets}
               landslideEvents={landslideEvents}
+              historicalPoints={historyPoints}
+              selectedHistoricalId={selectedHistoricalId}
+              onSelectHistorical={handleSelectHistorical}
               visibleLayers={visibleLayers}
               selectedDistrictId={selectedDistrictId}
               selectedEntity={selectedEntity}
@@ -345,20 +384,20 @@ export default function OperationalMapPage() {
           </div>
 
           {/* Right Column: Entity Detail Drawer (if selected) */}
-          {selectedEntity && (
+          {hasSelection && (
             <div className="lg:col-span-1 h-[420px] lg:h-[540px] flex">
-              <EntityDetailDrawer
+              {selectedHistoricalId !== null ? <GsiRecordDetails id={selectedHistoricalId} onClose={() => setSelectedHistoricalId(null)} /> : <EntityDetailDrawer
                 selectedEntity={selectedEntity}
                 onClose={() => setSelectedEntity(null)}
                 className="w-full h-full"
-              />
+              />}
             </div>
           )}
         </div>
       ) : (
         /* Accessible Dual Mode: Tabular List */
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-          <div className={selectedEntity ? "lg:col-span-2" : "lg:col-span-3"}>
+          <div className={hasSelection ? "lg:col-span-2" : "lg:col-span-3"}>
             <AccessibleEntityList
               districts={districts}
               slopeUnits={slopeUnits}
@@ -374,13 +413,13 @@ export default function OperationalMapPage() {
           </div>
 
           {/* Detail Drawer in List View */}
-          {selectedEntity && (
+          {hasSelection && (
             <div className="lg:col-span-1">
-              <EntityDetailDrawer
+              {selectedHistoricalId !== null ? <GsiRecordDetails id={selectedHistoricalId} onClose={() => setSelectedHistoricalId(null)} /> : <EntityDetailDrawer
                 selectedEntity={selectedEntity}
                 onClose={() => setSelectedEntity(null)}
                 className="w-full h-full"
-              />
+              />}
             </div>
           )}
         </div>

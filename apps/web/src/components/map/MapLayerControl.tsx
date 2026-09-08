@@ -41,6 +41,14 @@ export default function MapLayerControl({
 
   const layers: LayerConfig[] = [
     {
+      id: "gsi_history",
+      label: "GSI History",
+      count: counts["gsi_history"] || 0,
+      color: "border-violet-500 bg-violet-50 text-violet-700 dark:bg-violet-950/60 dark:text-violet-300",
+      subtitle: "Historical reference points · 8 states",
+      icon: MapPin,
+    },
+    {
       id: "districts",
       label: "Districts",
       count: counts["districts"] || 0,
@@ -130,7 +138,7 @@ export default function MapLayerControl({
       >
         <div className="flex items-center gap-2">
           <Layers className="w-4 h-4 text-gov-blue dark:text-sky-400" />
-          <span>OPERATIONAL LAYERS</span>
+          <span>MAP LAYERS</span>
           <span className="text-xs font-medium text-slate-500 dark:text-slate-400 tabular-nums">
             ({activeCount}/{layers.length})
           </span>
