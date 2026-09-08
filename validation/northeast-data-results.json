@@ -1,0 +1,95 @@
+{
+  "status": "PASS",
+  "source_sha256": "1f3e261371264dfabe3694811f6e9886d4950443e3d752289b6f9933d493665d",
+  "as_of_date": "2026-09-08",
+  "source_rows": 11022,
+  "valid_coordinate_points": 11020,
+  "quarantined": [
+    {
+      "record_uid": "GSI-AS-410",
+      "slide_id": "ASM/WKA/83C09/2016/34",
+      "reason": "source_coordinate_check_failed"
+    },
+    {
+      "record_uid": "GSI-MZ-22139",
+      "slide_id": "MZ/AIZ/84A14/2015/70",
+      "reason": "source_coordinate_check_failed"
+    }
+  ],
+  "single_day_records_imported_to_test_repository": 1347,
+  "records_kept_as_historical_map_only": 9673,
+  "exact_day_range": [
+    "2007-06-16",
+    "2026-07-13"
+  ],
+  "recorded_events_in_previous_30_days": 0,
+  "duplicate_event_reference_rejected": true,
+  "missing_event_time_rejected": true,
+  "api_state_filter_and_full_pagination": "PASS",
+  "risk_without_terrain_inputs": "DATA_INSUFFICIENT",
+  "state_summary": [
+    {
+      "state": "Arunachal Pradesh",
+      "state_code": "AR",
+      "source_rows": 1220,
+      "map_points": 1220,
+      "test_event_records": 30
+    },
+    {
+      "state": "Assam",
+      "state_code": "AS",
+      "source_rows": 857,
+      "map_points": 856,
+      "test_event_records": 155
+    },
+    {
+      "state": "Manipur",
+      "state_code": "MN",
+      "source_rows": 1631,
+      "map_points": 1631,
+      "test_event_records": 39
+    },
+    {
+      "state": "Meghalaya",
+      "state_code": "ML",
+      "source_rows": 1051,
+      "map_points": 1051,
+      "test_event_records": 168
+    },
+    {
+      "state": "Mizoram",
+      "state_code": "MZ",
+      "source_rows": 3487,
+      "map_points": 3486,
+      "test_event_records": 807
+    },
+    {
+      "state": "Nagaland",
+      "state_code": "NL",
+      "source_rows": 1902,
+      "map_points": 1902,
+      "test_event_records": 83
+    },
+    {
+      "state": "Sikkim",
+      "state_code": "SK",
+      "source_rows": 777,
+      "map_points": 777,
+      "test_event_records": 55
+    },
+    {
+      "state": "Tripura",
+      "state_code": "TR",
+      "source_rows": 97,
+      "map_points": 97,
+      "test_event_records": 10
+    }
+  ],
+  "limits": [
+    "Coordinate numeric checks do not verify field location or state/district boundaries.",
+    "Historical district labels need a reviewed mapping to current district IDs.",
+    "No slope, road, drainage, soil, rainfall, training labels or live alerts are supplied.",
+    "Zero recorded recent events does not demonstrate zero risk or complete current coverage.",
+    "Imported rows remain HISTORICAL; day-level time uses an explicit test-only convention."
+  ]
+}

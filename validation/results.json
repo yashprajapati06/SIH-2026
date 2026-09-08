@@ -1,0 +1,1863 @@
+{
+  "validated_on": "2026-09-08",
+  "source_commit": "f024b39d2db509f09624450c3315ee5debc26098",
+  "execution": "local isolated checkout; not a GitHub Actions run",
+  "runtime": {
+    "os": "Windows",
+    "python": "3.12.14",
+    "node": "24.19.0",
+    "mongodb": "8.0.30"
+  },
+  "backend": {
+    "total": 270,
+    "passed": 269,
+    "skipped": 1,
+    "failed": 0,
+    "cases": [
+      {
+        "class": "tests.test_auth.TestCryptoAndJWT",
+        "test": "test_password_hashing_and_verification",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_auth.TestCryptoAndJWT",
+        "test": "test_jwt_rfc7519_creation_and_validation",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_auth.TestCryptoAndJWT",
+        "test": "test_jwt_tampered_signature_rejection",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_auth.TestCryptoAndJWT",
+        "test": "test_jwt_expired_token_rejection",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_auth.TestCryptoAndJWT",
+        "test": "test_jwt_revocation",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_auth.TestAuthAPI",
+        "test": "test_successful_login",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_auth.TestAuthAPI",
+        "test": "test_login_invalid_password",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_auth.TestAuthAPI",
+        "test": "test_login_nonexistent_user",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_auth.TestAuthAPI",
+        "test": "test_token_refresh",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_auth.TestAuthAPI",
+        "test": "test_get_current_user_context",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_auth.TestAuthAPI",
+        "test": "test_logout_revokes_token",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_copernicus_stac.TestCopernicusSTACProvider",
+        "test": "test_stac_item_normalization",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_copernicus_stac.TestCopernicusSTACProvider",
+        "test": "test_search_scenes_builds_valid_stac_payload",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_copernicus_stac.TestCopernicusSTACProvider",
+        "test": "test_search_rejects_inverted_bbox",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_copernicus_stac.TestSatelliteAcquisitionService",
+        "test": "test_acquisition_end_to_end_success",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_copernicus_stac.TestSatelliteAcquisitionService",
+        "test": "test_production_mode_rejects_synthetic_scene_id",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_copernicus_stac.TestProcessingGateEnforcement",
+        "test": "test_processing_gate_blocks_incomplete_acquisition",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_copernicus_stac.TestProcessingGateEnforcement",
+        "test": "test_processing_gate_blocks_missing_checksum",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_copernicus_stac.TestProcessingGateEnforcement",
+        "test": "test_processing_gate_blocks_synthetic_in_production",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_errors",
+        "test": "test_correlation_id_and_security_headers",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_errors",
+        "test": "test_404_error_envelope_structure",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_errors",
+        "test": "test_stage_gate_placeholder_route",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_errors",
+        "test": "test_auto_generated_correlation_id",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_rbac_matrix_and_idor.TestCompleteRBACMatrix",
+        "test": "test_all_eleven_roles_defined",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_rbac_matrix_and_idor.TestCompleteRBACMatrix",
+        "test": "test_platform_admin_full_capabilities",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_rbac_matrix_and_idor.TestCompleteRBACMatrix",
+        "test": "test_state_authority_capabilities_and_scope",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_rbac_matrix_and_idor.TestCompleteRBACMatrix",
+        "test": "test_ddma_capabilities_and_scope",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_rbac_matrix_and_idor.TestCompleteRBACMatrix",
+        "test": "test_infrastructure_agencies_pwd_bro_nhidcl_railways",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_rbac_matrix_and_idor.TestCompleteRBACMatrix",
+        "test": "test_field_officer_capabilities",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_rbac_matrix_and_idor.TestCompleteRBACMatrix",
+        "test": "test_observer_auditor_capabilities",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_rbac_matrix_and_idor.TestCompleteRBACMatrix",
+        "test": "test_citizen_reporter_capabilities",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_rbac_matrix_and_idor.TestIDORAndBOLAProtections",
+        "test": "test_field_officer_cannot_view_other_user_profiles",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_rbac_matrix_and_idor.TestIDORAndBOLAProtections",
+        "test": "test_ddma_aizawl_cannot_access_ddma_lunglei_roster",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_rbac_matrix_and_idor.TestIDORAndBOLAProtections",
+        "test": "test_pwd_cannot_modify_other_organization_membership",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_rbac_matrix_and_idor.TestStaleAuthorizationLifecycle",
+        "test": "test_stale_token_denied_after_membership_revocation",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestJWTHardeningAndClaims",
+        "test": "test_jwt_01_hs256_accepted",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestJWTHardeningAndClaims",
+        "test": "test_jwt_02_alg_none_rejected",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestJWTHardeningAndClaims",
+        "test": "test_jwt_03_rs256_rejected",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestJWTHardeningAndClaims",
+        "test": "test_jwt_04_malformed_jwt_rejected",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestJWTHardeningAndClaims",
+        "test": "test_jwt_05_tampered_signature_rejected",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestJWTHardeningAndClaims",
+        "test": "test_jwt_06_missing_jti_rejected",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestJWTHardeningAndClaims",
+        "test": "test_jwt_07_malformed_jti_rejected",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestJWTHardeningAndClaims",
+        "test": "test_jwt_08_missing_iat_rejected",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestJWTHardeningAndClaims",
+        "test": "test_jwt_09_missing_exp_rejected",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestJWTHardeningAndClaims",
+        "test": "test_jwt_10_missing_issuer_rejected",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestJWTHardeningAndClaims",
+        "test": "test_jwt_11_wrong_issuer_rejected",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestJWTHardeningAndClaims",
+        "test": "test_jwt_12_missing_audience_rejected",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestJWTHardeningAndClaims",
+        "test": "test_jwt_13_wrong_audience_rejected",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestJWTHardeningAndClaims",
+        "test": "test_jwt_14_missing_token_type_rejected",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestJWTHardeningAndClaims",
+        "test": "test_jwt_15_invalid_token_type_rejected",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestJWTHardeningAndClaims",
+        "test": "test_jwt_16_future_iat_within_allowed_skew_handled_correctly",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestJWTHardeningAndClaims",
+        "test": "test_jwt_17_future_iat_beyond_60s_rejected",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestJWTHardeningAndClaims",
+        "test": "test_jwt_18_expired_token_rejected",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestJWTHardeningAndClaims",
+        "test": "test_jwt_19_exp_precedes_or_equals_iat_rejected",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestJWTHardeningAndClaims",
+        "test": "test_jwt_20_access_token_cannot_be_used_as_refresh_token",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestJWTHardeningAndClaims",
+        "test": "test_jwt_21_refresh_token_cannot_be_used_as_access_token",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestRefreshTokenRotationAndReuse",
+        "test": "test_refresh_token_rotation_lifecycle",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestRefreshTokenRotationAndReuse",
+        "test": "test_refresh_token_reuse_invalidates_entire_family",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestPasswordHardeningAndRehash",
+        "test": "test_password_hash_metadata_and_salt",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestPasswordHardeningAndRehash",
+        "test": "test_needs_rehash_detects_outdated_iterations",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestProductionDevFixtureRejection",
+        "test": "test_production_mode_rejects_development_fixtures",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestTokenRevocationContract",
+        "test": "test_revoked_access_token_rejected",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestTokenRevocationContract",
+        "test": "test_revoked_refresh_token_rejected",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_hardening_token_and_jwt.TestTokenRevocationContract",
+        "test": "test_logout_invalidates_active_session_and_tokens",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_health",
+        "test": "test_health_aggregated_endpoint",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_health",
+        "test": "test_liveness_probe",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_health",
+        "test": "test_readiness_probe",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_health",
+        "test": "test_root_endpoint",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_live_copernicus_stac",
+        "test": "test_live_copernicus_stac_connectivity_and_discovery",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_live_s3_storage.TestLiveS3Storage",
+        "test": "test_live_s3_put_head_get_delete_lifecycle",
+        "status": "skipped"
+      },
+      {
+        "class": "tests.test_mongo_persistence_and_failure",
+        "test": "test_1_production_cannot_use_in_memory_persistence",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_mongo_persistence_and_failure",
+        "test": "test_2_mongo_outage_causes_readiness_failure",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_mongo_persistence_and_failure",
+        "test": "test_3_mongo_outage_cannot_silently_switch_repositories",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_mongo_persistence_and_failure",
+        "test": "test_4_data_survives_backend_restart",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_mongo_persistence_and_failure",
+        "test": "test_5_mongo_atlas_indexes_and_collections_active",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_mongo_persistence_and_failure",
+        "test": "test_6_security_redaction_in_readiness_and_errors",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_mongo_persistence_and_failure",
+        "test": "test_7_true_os_multiprocess_restart_persistence",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_mongo_persistence_and_failure",
+        "test": "test_8_multiworker_concurrent_visibility",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_mongo_persistence_and_failure",
+        "test": "test_9_mongo_authoritative_crud_all_stages",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_pre_stage9_hardening.TestPersistentTokenRevocation",
+        "test": "test_token_revocation_persists_across_simulated_process_restart",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_pre_stage9_hardening.TestPersistentTokenRevocation",
+        "test": "test_get_current_user_rejects_revoked_token",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_pre_stage9_hardening.TestTruthfulNotificationLifecycle",
+        "test": "test_simulated_development_records_simulated_not_delivered",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_pre_stage9_hardening.TestTruthfulNotificationLifecycle",
+        "test": "test_production_real_provider_sns_acceptance",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_pre_stage9_hardening.TestTruthfulNotificationLifecycle",
+        "test": "test_production_provider_failure",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_pre_stage9_hardening.TestTruthfulNotificationLifecycle",
+        "test": "test_production_rejects_simulated_in_prod_env",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_pre_stage9_hardening.TestProductionConfigurationValidation",
+        "test": "test_enforce_production_constraints_rejects_simulated_notification",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_pre_stage9_hardening.TestProductionConfigurationValidation",
+        "test": "test_enforce_production_constraints_defaults_auto_to_aws_sns",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_pre_stage9_hardening.TestReadinessProbe",
+        "test": "test_liveness_probe_is_lightweight",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_pre_stage9_hardening.TestReadinessProbe",
+        "test": "test_readiness_probe_success",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_pre_stage9_hardening.TestReadinessProbe",
+        "test": "test_readiness_probe_at_root_url",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_pre_stage9_hardening.TestReadinessProbe",
+        "test": "test_readiness_fails_in_production_if_s3_fails",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_rbac_security.TestRBACAndPrivilegeEscalation",
+        "test": "test_field_officer_cannot_create_organization",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_rbac_security.TestRBACAndPrivilegeEscalation",
+        "test": "test_field_officer_cannot_provision_users",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_rbac_security.TestRBACAndPrivilegeEscalation",
+        "test": "test_platform_admin_can_provision_users",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_rbac_security.TestRBACAndPrivilegeEscalation",
+        "test": "test_forged_role_in_token_is_rejected_against_server_state",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_rbac_security.TestTenantScopeAndMembership",
+        "test": "test_ddma_user_blocked_from_cross_tenant_organization_members",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_rbac_security.TestTenantScopeAndMembership",
+        "test": "test_state_authority_can_access_child_district_organization",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_rbac_security.TestTenantScopeAndMembership",
+        "test": "test_disabled_user_login_denied",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_rbac_security.TestTenantScopeAndMembership",
+        "test": "test_suspended_membership_denied_operation",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_rbac_security.TestRateLimitingAndAuditTrail",
+        "test": "test_brute_force_login_rate_limiting",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_rbac_security.TestRateLimitingAndAuditTrail",
+        "test": "test_security_events_are_traceable",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_s3_storage.TestStorageKeyValidation",
+        "test": "test_valid_keys",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_s3_storage.TestStorageKeyValidation",
+        "test": "test_rejects_empty_or_whitespace_keys",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_s3_storage.TestStorageKeyValidation",
+        "test": "test_rejects_path_traversal",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_s3_storage.TestLocalObjectStorage",
+        "test": "test_put_get_head_delete_lifecycle",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_s3_storage.TestLocalObjectStorage",
+        "test": "test_detects_checksum_mismatch_on_put_and_get",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_s3_storage.TestS3ObjectStorageWithMock",
+        "test": "test_s3_put_object_enforces_sse_and_metadata",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_s3_storage.TestS3ObjectStorageWithMock",
+        "test": "test_s3_get_object_and_integrity_check",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_s3_storage.TestS3ObjectStorageWithMock",
+        "test": "test_s3_head_object_and_exists",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_s3_storage.TestS3ObjectStorageWithMock",
+        "test": "test_s3_error_handling_access_denied",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_s3_storage.TestS3ObjectStorageWithMock",
+        "test": "test_s3_error_handling_service_unavailable",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_s3_storage.TestStorageProductionConstraints",
+        "test": "test_production_rejects_local_storage_backend",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_s3_storage.TestStorageProductionConstraints",
+        "test": "test_production_rejects_empty_s3_bucket",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_s3_storage.TestStorageProductionConstraints",
+        "test": "test_production_rejects_non_production_satellite_mode",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage10_community_and_sensors",
+        "test": "test_citizen_report_creation_and_coordinate_bounds",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage10_community_and_sensors",
+        "test": "test_duplicate_report_detection",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage10_community_and_sensors",
+        "test": "test_media_reference_path_traversal_prevention",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage10_community_and_sensors",
+        "test": "test_citizen_report_state_machine_valid_flow",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage10_community_and_sensors",
+        "test": "test_human_verification_rule_blocks_system_auto_verification",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage10_community_and_sensors",
+        "test": "test_moderation_endpoint_records_audit_trail",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage10_community_and_sensors",
+        "test": "test_spatial_temporal_clustering_engine",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage10_community_and_sensors",
+        "test": "test_sensor_registration_and_uniqueness",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage10_community_and_sensors",
+        "test": "test_sensor_telemetry_bounds_and_clock_skew",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage10_community_and_sensors",
+        "test": "test_sensor_freshness_evaluation",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage10_community_and_sensors",
+        "test": "test_telemetry_batch_ingestion_and_evidence_persistence",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage10_community_and_sensors",
+        "test": "test_security_district_scoping_and_bola",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage10_community_and_sensors",
+        "test": "test_community_and_sensor_summaries",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_domain_crud_and_integrity.TestStage3DomainCRUDAndIntegrity",
+        "test": "test_district_crud_and_duplicate_conflict",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_domain_crud_and_integrity.TestStage3DomainCRUDAndIntegrity",
+        "test": "test_slope_unit_foreign_reference_and_crud",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_domain_crud_and_integrity.TestStage3DomainCRUDAndIntegrity",
+        "test": "test_road_and_chainage_foreign_key_and_conflict",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_domain_crud_and_integrity.TestStage3DomainCRUDAndIntegrity",
+        "test": "test_village_crud_and_population_handling",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_domain_crud_and_integrity.TestStage3DomainCRUDAndIntegrity",
+        "test": "test_asset_crud_and_foreign_key_integrity",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_domain_crud_and_integrity.TestStage3DomainCRUDAndIntegrity",
+        "test": "test_landslide_event_crud_provenance_and_immutability",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_domain_crud_and_integrity.TestStage3DomainCRUDAndIntegrity",
+        "test": "test_bounded_pagination_and_capping",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_geojson.TestGeoJSONMatrix",
+        "test": "test_01_valid_point",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_geojson.TestGeoJSONMatrix",
+        "test": "test_02_valid_linestring",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_geojson.TestGeoJSONMatrix",
+        "test": "test_03_valid_polygon",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_geojson.TestGeoJSONMatrix",
+        "test": "test_04_valid_multipolygon",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_geojson.TestGeoJSONMatrix",
+        "test": "test_05_missing_coordinates",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_geojson.TestGeoJSONMatrix",
+        "test": "test_06_latitude_above_90",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_geojson.TestGeoJSONMatrix",
+        "test": "test_07_latitude_below_minus_90",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_geojson.TestGeoJSONMatrix",
+        "test": "test_08_longitude_above_180",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_geojson.TestGeoJSONMatrix",
+        "test": "test_09_longitude_below_minus_180",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_geojson.TestGeoJSONMatrix",
+        "test": "test_10_nan_coordinates",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_geojson.TestGeoJSONMatrix",
+        "test": "test_11_infinity_coordinates",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_geojson.TestGeoJSONMatrix",
+        "test": "test_12_malformed_geojson",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_geojson.TestGeoJSONMatrix",
+        "test": "test_13_unsupported_geometry_type",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_geojson.TestGeoJSONMatrix",
+        "test": "test_14_empty_coordinates",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_geojson.TestGeoJSONMatrix",
+        "test": "test_15_oversized_geometry",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_geojson.TestGeoJSONMatrix",
+        "test": "test_16_wrong_coordinate_nesting_and_unclosed_polygon",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_geojson.TestGeoJSONMatrix",
+        "test": "test_valid_multilinestring",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_geojson.TestGeoJSONMatrix",
+        "test": "test_geojson_discriminator_parse",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_indexes_and_perf.TestStage3IndexesAndPerformance",
+        "test": "test_stage3_index_specifications_completeness",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_indexes_and_perf.TestStage3IndexesAndPerformance",
+        "test": "test_measured_query_performance_benchmarks",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_indexes_and_perf.TestStage3IndexesAndPerformance",
+        "test": "test_error_envelope_and_correlation_id_on_failures",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_rbac_and_idor.TestStage3RBACAndIDOR",
+        "test": "test_citizen_reporter_cannot_access_domain_endpoints",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_rbac_and_idor.TestStage3RBACAndIDOR",
+        "test": "test_observer_auditor_read_only",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_rbac_and_idor.TestStage3RBACAndIDOR",
+        "test": "test_idor_cross_district_isolation",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_rbac_and_idor.TestStage3RBACAndIDOR",
+        "test": "test_ddma_district_scoped_operations",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_rbac_and_idor.TestStage3RBACAndIDOR",
+        "test": "test_mass_assignment_defense",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_rbac_and_idor.TestStage3RBACAndIDOR",
+        "test": "test_security_audit_event_logged",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_spatial_queries.TestStage3SpatialQueries",
+        "test": "test_point_in_geometry_contains_and_misses",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_spatial_queries.TestStage3SpatialQueries",
+        "test": "test_nearby_search_radius_boundary",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_spatial_queries.TestStage3SpatialQueries",
+        "test": "test_bbox_query",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_spatial_queries.TestStage3SpatialQueries",
+        "test": "test_combined_spatial_and_rbac_scoping",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage3_spatial_queries.TestStage3SpatialQueries",
+        "test": "test_spatial_input_validation_and_max_radius",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_artifact_security.TestStage5ArtifactSecurity",
+        "test": "test_checksum_verification_detects_tampered_weights",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_artifact_security.TestStage5ArtifactSecurity",
+        "test": "test_model_lifecycle_activation_and_retirement",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_artifact_security.TestStage5ArtifactSecurity",
+        "test": "test_duplicate_model_registration_rejected",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_leakage_and_metrics.TestStage5LeakageAndMetrics",
+        "test": "test_temporal_split_valid_ordering",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_leakage_and_metrics.TestStage5LeakageAndMetrics",
+        "test": "test_temporal_leakage_in_training_split_detected",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_leakage_and_metrics.TestStage5LeakageAndMetrics",
+        "test": "test_temporal_leakage_inverted_cutoffs_rejected",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_leakage_and_metrics.TestStage5LeakageAndMetrics",
+        "test": "test_spatial_separation_evaluation",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_leakage_and_metrics.TestStage5LeakageAndMetrics",
+        "test": "test_confusion_matrix_and_f1_calculation",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_leakage_and_metrics.TestStage5LeakageAndMetrics",
+        "test": "test_roc_auc_numerical_integration",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_leakage_and_metrics.TestStage5LeakageAndMetrics",
+        "test": "test_pr_auc_and_brier_score",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_leakage_and_metrics.TestStage5LeakageAndMetrics",
+        "test": "test_class_imbalance_metrics",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_rbac_and_idor.TestStage5RBACAndIDOR",
+        "test": "test_citizen_reporter_denied_risk_endpoints",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_rbac_and_idor.TestStage5RBACAndIDOR",
+        "test": "test_field_officer_read_only_risk_access",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_rbac_and_idor.TestStage5RBACAndIDOR",
+        "test": "test_ddma_cross_district_idor_protection",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_rbac_and_idor.TestStage5RBACAndIDOR",
+        "test": "test_ddma_scoped_run_and_prediction_retrieval",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_rbac_and_idor.TestStage5RBACAndIDOR",
+        "test": "test_non_admin_cannot_activate_or_register_models",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_risk_engine_and_ml.TestStage5RiskEngineAndML",
+        "test": "test_predict_valid_inputs_generates_calibrated_estimate",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_risk_engine_and_ml.TestStage5RiskEngineAndML",
+        "test": "test_predict_uncalibrated_model_exposes_uncalibrated_state",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_risk_engine_and_ml.TestStage5RiskEngineAndML",
+        "test": "test_refusal_policy_on_data_insufficient_state",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_risk_engine_and_ml.TestStage5RiskEngineAndML",
+        "test": "test_prediction_reproducibility_and_determinism",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_schemas_and_provenance.TestStage5SchemasAndProvenance",
+        "test": "test_authoritative_feature_definitions_completeness",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_schemas_and_provenance.TestStage5SchemasAndProvenance",
+        "test": "test_feature_quality_evaluator_valid_data",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_schemas_and_provenance.TestStage5SchemasAndProvenance",
+        "test": "test_feature_quality_evaluator_out_of_range",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_schemas_and_provenance.TestStage5SchemasAndProvenance",
+        "test": "test_feature_quality_evaluator_stale_data",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_schemas_and_provenance.TestStage5SchemasAndProvenance",
+        "test": "test_feature_quality_evaluator_missing_data",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_schemas_and_provenance.TestStage5SchemasAndProvenance",
+        "test": "test_snapshot_builder_sha256_determinism_and_immutability",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage5_schemas_and_provenance.TestStage5SchemasAndProvenance",
+        "test": "test_snapshot_builder_triggers_data_insufficient_on_missing_features",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage6_insar_pipeline.TestStage6InSARPipeline",
+        "test": "test_insar_pair_validation_rejects_non_slc",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage6_insar_pipeline.TestStage6InSARPipeline",
+        "test": "test_insar_pair_validation_rejects_pass_direction_mismatch",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage6_insar_pipeline.TestStage6InSARPipeline",
+        "test": "test_insar_pair_validation_rejects_temporal_inversion",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage6_insar_pipeline.TestStage6InSARPipeline",
+        "test": "test_insar_pair_validation_handles_critical_perpendicular_baseline",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage6_insar_pipeline.TestStage6InSARPipeline",
+        "test": "test_execute_insar_job_generates_verified_observation",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage6_rbac_and_idor.TestStage6RBACAndIDOR",
+        "test": "test_citizen_reporter_denied_satellite_endpoints",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage6_rbac_and_idor.TestStage6RBACAndIDOR",
+        "test": "test_observer_auditor_read_only",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage6_rbac_and_idor.TestStage6RBACAndIDOR",
+        "test": "test_ddma_cross_district_idor_isolation",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage6_rbac_and_idor.TestStage6RBACAndIDOR",
+        "test": "test_processing_run_dispatch_records_security_audit_event",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage6_schemas_and_stac.TestStage6SchemasAndSTAC",
+        "test": "test_sentinel1_sar_observation_metadata",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage6_schemas_and_stac.TestStage6SchemasAndSTAC",
+        "test": "test_insar_los_displacement_semantics",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage6_schemas_and_stac.TestStage6SchemasAndSTAC",
+        "test": "test_stac_item_validator_valid_and_inverted_bbox",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage6_schemas_and_stac.TestStage6SchemasAndSTAC",
+        "test": "test_truthful_connector_statuses_no_fabrication",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage6_security_and_ssrf.TestStage6SecurityAndSSRF",
+        "test": "test_ssrf_rejects_insecure_schemes",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage6_security_and_ssrf.TestStage6SecurityAndSSRF",
+        "test": "test_ssrf_rejects_untrusted_domains",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage6_security_and_ssrf.TestStage6SecurityAndSSRF",
+        "test": "test_ssrf_permits_approved_catalog_domains",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage6_security_and_ssrf.TestStage6SecurityAndSSRF",
+        "test": "test_archive_extraction_rejects_zipslip_traversal",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage6_security_and_ssrf.TestStage6SecurityAndSSRF",
+        "test": "test_archive_extraction_rejects_decompression_bomb",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage6_security_and_ssrf.TestStage6SecurityAndSSRF",
+        "test": "test_raster_validator_accepts_valid_geotiff",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage6_security_and_ssrf.TestStage6SecurityAndSSRF",
+        "test": "test_raster_validator_rejects_non_tiff",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage6_security_and_ssrf.TestStage6SecurityAndSSRF",
+        "test": "test_raster_validator_rejects_oversized_dimensions",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage6_security_and_ssrf.TestStage6SecurityAndSSRF",
+        "test": "test_storage_rejects_path_traversal_keys",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage6_security_and_ssrf.TestStage6SecurityAndSSRF",
+        "test": "test_storage_detects_tampered_payload_checksum",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage7_consequence_engine.TestStage7ConsequenceEngine",
+        "test": "test_spatial_utilities_geometry_distance",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage7_consequence_engine.TestStage7ConsequenceEngine",
+        "test": "test_segment_intersection",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage7_consequence_engine.TestStage7ConsequenceEngine",
+        "test": "test_road_exposure_intersecting",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage7_consequence_engine.TestStage7ConsequenceEngine",
+        "test": "test_road_exposure_nearby_and_distant",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage7_consequence_engine.TestStage7ConsequenceEngine",
+        "test": "test_cross_district_relationship_blocked",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage7_consequence_engine.TestStage7ConsequenceEngine",
+        "test": "test_road_chainage_linking_and_unavailable",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage7_consequence_engine.TestStage7ConsequenceEngine",
+        "test": "test_asset_exposure_and_criticality",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage7_consequence_engine.TestStage7ConsequenceEngine",
+        "test": "test_village_exposure_and_non_alarmist_phrasing",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage7_consequence_engine.TestStage7ConsequenceEngine",
+        "test": "test_risk_and_insar_integration",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage7_consequence_engine.TestStage7ConsequenceEngine",
+        "test": "test_full_district_batch_analysis",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage7_consequence_schemas.TestStage7ConsequenceSchemas",
+        "test": "test_consequence_relationship_valid_schema",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage7_consequence_schemas.TestStage7ConsequenceSchemas",
+        "test": "test_non_autonomous_disclaimers_present",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage7_consequence_schemas.TestStage7ConsequenceSchemas",
+        "test": "test_missing_data_sentinel_codes",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage7_consequence_schemas.TestStage7ConsequenceSchemas",
+        "test": "test_criticality_never_assumed_from_name",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage7_consequence_schemas.TestStage7ConsequenceSchemas",
+        "test": "test_consequence_run_request_validation",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage7_consequence_schemas.TestStage7ConsequenceSchemas",
+        "test": "test_consequence_summary_schema",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage7_rbac_and_idor.TestStage7RBACAndIDOR",
+        "test": "test_unauthenticated_request_rejected",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage7_rbac_and_idor.TestStage7RBACAndIDOR",
+        "test": "test_citizen_reporter_denied_consequence_endpoints",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage7_rbac_and_idor.TestStage7RBACAndIDOR",
+        "test": "test_field_officer_read_only",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage7_rbac_and_idor.TestStage7RBACAndIDOR",
+        "test": "test_ddma_district_scoping_and_idor_protection",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage7_rbac_and_idor.TestStage7RBACAndIDOR",
+        "test": "test_state_authority_full_consequence_access",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage7_rbac_and_idor.TestStage7RBACAndIDOR",
+        "test": "test_stage_boundary_negative_tests",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage8_action_lifecycle.TestStage8ActionLifecycle",
+        "test": "test_action_full_lifecycle_success",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage8_action_lifecycle.TestStage8ActionLifecycle",
+        "test": "test_action_rejection_prevents_execution",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage8_action_lifecycle.TestStage8ActionLifecycle",
+        "test": "test_action_illegal_direct_execution_blocked",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage8_action_lifecycle.TestStage8ActionLifecycle",
+        "test": "test_action_idempotency_prevents_duplicate",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage8_action_schemas.TestStage8ActionSchemas",
+        "test": "test_action_non_autonomous_disclaimer_present",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage8_action_schemas.TestStage8ActionSchemas",
+        "test": "test_action_expiry_validation_rejects_past_or_equal_expiry",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage8_action_schemas.TestStage8ActionSchemas",
+        "test": "test_action_authorization_model_attributes",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage8_action_schemas.TestStage8ActionSchemas",
+        "test": "test_action_execution_and_outcome_models",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage8_rbac_and_idor.TestStage8RBACAndIDOR",
+        "test": "test_unauthenticated_requests_blocked",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage8_rbac_and_idor.TestStage8RBACAndIDOR",
+        "test": "test_citizen_reporter_operational_controls_forbidden",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage8_rbac_and_idor.TestStage8RBACAndIDOR",
+        "test": "test_district_jurisdiction_isolation_bola_idor",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage8_rbac_and_idor.TestStage8RBACAndIDOR",
+        "test": "test_mass_assignment_defense_privileged_fields_controlled_by_server",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage8_warning_and_ledger.TestStage8WarningAndLedger",
+        "test": "test_warning_full_lifecycle_and_truthful_dispatch",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage8_warning_and_ledger.TestStage8WarningAndLedger",
+        "test": "test_warning_language_safety_rejects_alarmist_claims",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage8_warning_and_ledger.TestStage8WarningAndLedger",
+        "test": "test_warning_dispatch_unauthorized_draft_blocked",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage8_warning_and_ledger.TestStage8WarningAndLedger",
+        "test": "test_warning_escalation_bounded_to_level_3",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage8_warning_and_ledger.TestStage8WarningAndLedger",
+        "test": "test_warning_ledger_cryptographic_chain_integrity_and_tamper_detection",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage9_alerts_and_connectivity.TestStage9AlertStateMachine",
+        "test": "test_valid_forward_lifecycle",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage9_alerts_and_connectivity.TestStage9AlertStateMachine",
+        "test": "test_invalid_transition_leaps_fail",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage9_alerts_and_connectivity.TestStage9AlertStateMachine",
+        "test": "test_terminal_states_cannot_transition",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage9_alerts_and_connectivity.TestStage9AlertStateMachine",
+        "test": "test_expired_alerts_cannot_advance",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage9_alerts_and_connectivity.TestStage9ProviderTruthfulness",
+        "test": "test_unconfigured_sms_provider_reports_not_configured_and_fails_truthfully",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage9_alerts_and_connectivity.TestStage9ProviderTruthfulness",
+        "test": "test_simulated_provider_is_never_delivered",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage9_alerts_and_connectivity.TestStage9DeliveryEngineAndIdempotency",
+        "test": "test_cannot_queue_alerts_for_unauthorized_draft_warning",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage9_alerts_and_connectivity.TestStage9DeliveryEngineAndIdempotency",
+        "test": "test_queue_alerts_creates_alerts_and_delivery_jobs",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage9_alerts_and_connectivity.TestStage9DeliveryEngineAndIdempotency",
+        "test": "test_server_side_idempotency_prevents_duplicate_alerts",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage9_alerts_and_connectivity.TestStage9BoundedRetries",
+        "test": "test_bounded_retry_exhaustion_terminates_at_failed",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage9_alerts_and_connectivity.TestStage9AcknowledgementAndTruthfulness",
+        "test": "test_delivered_does_not_imply_acknowledged",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage9_alerts_and_connectivity.TestStage9AcknowledgementAndTruthfulness",
+        "test": "test_acknowledgement_rejects_recipient_mismatch",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage9_alerts_and_connectivity.TestStage9DegradedConnectivityAndOfflineSync",
+        "test": "test_connectivity_status_endpoint",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage9_alerts_and_connectivity.TestStage9DegradedConnectivityAndOfflineSync",
+        "test": "test_offline_sync_reconciles_acknowledgement",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_stage9_alerts_and_connectivity.TestStage9DegradedConnectivityAndOfflineSync",
+        "test": "test_offline_safety_rule_rejects_forbidden_operations",
+        "status": "passed"
+      }
+    ]
+  },
+  "frontend_unit": {
+    "numTotalTests": 94,
+    "numPassedTests": 94,
+    "numFailedTests": 0,
+    "success": true
+  },
+  "typecheck": "PASS",
+  "lint": {
+    "status": "PASS",
+    "warnings": 7
+  },
+  "production_build": {
+    "status": "FAIL",
+    "failed_prerender_paths": 19,
+    "error": "useSearchParams() should be wrapped in a suspense boundary"
+  },
+  "browser": {
+    "stats": {
+      "startTime": "2026-09-08T16:37:45.826Z",
+      "duration": 300006.986,
+      "expected": 9,
+      "skipped": 0,
+      "unexpected": 37,
+      "flaky": 0
+    },
+    "runner_errors": [
+      "Timed out waiting 300s for the teardown for plugin setup to run"
+    ],
+    "cases": [
+      {
+        "file": "auth.spec.ts",
+        "line": 4,
+        "test": "navigates to login page, selects demo identity, and validates form",
+        "project": "Desktop Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByText('OPERATIONAL AUTHENTICATION')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByText('OPERATIONAL AUTHENTICATION') with timeout 5000ms\n  - waiting for getByText('OPERATIONAL AUTHENTICATION')\n"
+      },
+      {
+        "file": "auth.spec.ts",
+        "line": 4,
+        "test": "navigates to login page, selects demo identity, and validates form",
+        "project": "Mobile Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByText('OPERATIONAL AUTHENTICATION')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByText('OPERATIONAL AUTHENTICATION') with timeout 5000ms\n  - waiting for getByText('OPERATIONAL AUTHENTICATION')\n"
+      },
+      {
+        "file": "consequence.spec.ts",
+        "line": 4,
+        "test": "loads the Consequences page and verifies strict non-autonomous boundary disclaimer",
+        "project": "Desktop Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByRole('heading', { name: /Road & Asset Consequence Intelligence/i })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('heading', { name: /Road & Asset Consequence Intelligence/i }) with timeout 5000ms\n  - waiting for getByRole('heading', { name: /Road & Asset Consequence Intelligence/i })\n"
+      },
+      {
+        "file": "consequence.spec.ts",
+        "line": 22,
+        "test": "displays consequence metrics overview cards",
+        "project": "Desktop Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByText('Potentially Affected Roads')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByText('Potentially Affected Roads') with timeout 5000ms\n  - waiting for getByText('Potentially Affected Roads')\n"
+      },
+      {
+        "file": "consequence.spec.ts",
+        "line": 31,
+        "test": "renders consequence relationships table with non-alarmist terminology and opens detail drawer",
+        "project": "Desktop Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByRole('table')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('table') with timeout 5000ms\n  - waiting for getByRole('table')\n"
+      },
+      {
+        "file": "consequence.spec.ts",
+        "line": 57,
+        "test": "opens consequence analysis execution modal with bounded parameters",
+        "project": "Desktop Chrome",
+        "status": "passed",
+        "error": ""
+      },
+      {
+        "file": "consequence.spec.ts",
+        "line": 73,
+        "test": "navigates via /lifelines redirect to /consequences",
+        "project": "Desktop Chrome",
+        "status": "failed",
+        "error": "Error: expect(page).toHaveURL(expected) failed\n\nExpected pattern: /.*\\/consequences/\nReceived string:  \"http://127.0.0.1:3026/lifelines\"\nTimeout: 5000ms\n\nCall log:\n  - Expect \"toHaveURL\" with timeout 5000ms\n    14 \u00d7 locator resolved to <html lang=\"en\" class=\"__variable_11be26 __variable_d0be19 light\">\u2026</html>\n       - unexpected value \"http://127.0.0.1:3026/lifelines\"\n"
+      },
+      {
+        "file": "consequence.spec.ts",
+        "line": 4,
+        "test": "loads the Consequences page and verifies strict non-autonomous boundary disclaimer",
+        "project": "Mobile Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByRole('heading', { name: /Road & Asset Consequence Intelligence/i })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('heading', { name: /Road & Asset Consequence Intelligence/i }) with timeout 5000ms\n  - waiting for getByRole('heading', { name: /Road & Asset Consequence Intelligence/i })\n"
+      },
+      {
+        "file": "consequence.spec.ts",
+        "line": 22,
+        "test": "displays consequence metrics overview cards",
+        "project": "Mobile Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByText('Potentially Affected Roads')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByText('Potentially Affected Roads') with timeout 5000ms\n  - waiting for getByText('Potentially Affected Roads')\n"
+      },
+      {
+        "file": "consequence.spec.ts",
+        "line": 31,
+        "test": "renders consequence relationships table with non-alarmist terminology and opens detail drawer",
+        "project": "Mobile Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByRole('table')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('table') with timeout 5000ms\n  - waiting for getByRole('table')\n"
+      },
+      {
+        "file": "consequence.spec.ts",
+        "line": 57,
+        "test": "opens consequence analysis execution modal with bounded parameters",
+        "project": "Mobile Chrome",
+        "status": "passed",
+        "error": ""
+      },
+      {
+        "file": "consequence.spec.ts",
+        "line": 73,
+        "test": "navigates via /lifelines redirect to /consequences",
+        "project": "Mobile Chrome",
+        "status": "failed",
+        "error": "Error: expect(page).toHaveURL(expected) failed\n\nExpected pattern: /.*\\/consequences/\nReceived string:  \"http://127.0.0.1:3026/lifelines\"\nTimeout: 5000ms\n\nCall log:\n  - Expect \"toHaveURL\" with timeout 5000ms\n    14 \u00d7 locator resolved to <html lang=\"en\" class=\"__variable_11be26 __variable_d0be19 light\">\u2026</html>\n       - unexpected value \"http://127.0.0.1:3026/lifelines\"\n"
+      },
+      {
+        "file": "map.spec.ts",
+        "line": 4,
+        "test": "loads the map interface with header, filter bar, and layer controls",
+        "project": "Desktop Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByText('OPERATIONAL GEOSPATIAL MAP')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByText('OPERATIONAL GEOSPATIAL MAP') with timeout 5000ms\n  - waiting for getByText('OPERATIONAL GEOSPATIAL MAP')\n"
+      },
+      {
+        "file": "map.spec.ts",
+        "line": 31,
+        "test": "toggles layer visibility in Operational Layers panel",
+        "project": "Desktop Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByLabel('Toggle Roads layer')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByLabel('Toggle Roads layer') with timeout 5000ms\n  - waiting for getByLabel('Toggle Roads layer')\n"
+      },
+      {
+        "file": "map.spec.ts",
+        "line": 46,
+        "test": "switches to accessible tabular data roster view and inspects entity details",
+        "project": "Desktop Chrome",
+        "status": "passed",
+        "error": ""
+      },
+      {
+        "file": "map.spec.ts",
+        "line": 78,
+        "test": "supports nearby radius mode toggle with slider",
+        "project": "Desktop Chrome",
+        "status": "passed",
+        "error": ""
+      },
+      {
+        "file": "map.spec.ts",
+        "line": 4,
+        "test": "loads the map interface with header, filter bar, and layer controls",
+        "project": "Mobile Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByText('OPERATIONAL GEOSPATIAL MAP')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByText('OPERATIONAL GEOSPATIAL MAP') with timeout 5000ms\n  - waiting for getByText('OPERATIONAL GEOSPATIAL MAP')\n"
+      },
+      {
+        "file": "map.spec.ts",
+        "line": 31,
+        "test": "toggles layer visibility in Operational Layers panel",
+        "project": "Mobile Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByLabel('Toggle Roads layer')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByLabel('Toggle Roads layer') with timeout 5000ms\n  - waiting for getByLabel('Toggle Roads layer')\n"
+      },
+      {
+        "file": "map.spec.ts",
+        "line": 46,
+        "test": "switches to accessible tabular data roster view and inspects entity details",
+        "project": "Mobile Chrome",
+        "status": "passed",
+        "error": ""
+      },
+      {
+        "file": "map.spec.ts",
+        "line": 78,
+        "test": "supports nearby radius mode toggle with slider",
+        "project": "Mobile Chrome",
+        "status": "passed",
+        "error": ""
+      },
+      {
+        "file": "operations.spec.ts",
+        "line": 4,
+        "test": "loads Operations page and validates Non-Autonomous Safety Categorization banner",
+        "project": "Desktop Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByRole('heading', { name: /OPERATIONAL INTERVENTION & ACTION CONTROL/i })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('heading', { name: /OPERATIONAL INTERVENTION & ACTION CONTROL/i }) with timeout 5000ms\n  - waiting for getByRole('heading', { name: /OPERATIONAL INTERVENTION & ACTION CONTROL/i })\n"
+      },
+      {
+        "file": "operations.spec.ts",
+        "line": 28,
+        "test": "interacts with tabs across the operational command workflow",
+        "project": "Desktop Chrome",
+        "status": "passed",
+        "error": ""
+      },
+      {
+        "file": "operations.spec.ts",
+        "line": 50,
+        "test": "loads Tamper-Evident Warning Ledger page and displays SHA-256 verification",
+        "project": "Desktop Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByRole('heading', { name: /TAMPER-EVIDENT WARNING LEDGER/i })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('heading', { name: /TAMPER-EVIDENT WARNING LEDGER/i }) with timeout 5000ms\n  - waiting for getByRole('heading', { name: /TAMPER-EVIDENT WARNING LEDGER/i })\n"
+      },
+      {
+        "file": "operations.spec.ts",
+        "line": 4,
+        "test": "loads Operations page and validates Non-Autonomous Safety Categorization banner",
+        "project": "Mobile Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByRole('heading', { name: /OPERATIONAL INTERVENTION & ACTION CONTROL/i })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('heading', { name: /OPERATIONAL INTERVENTION & ACTION CONTROL/i }) with timeout 5000ms\n  - waiting for getByRole('heading', { name: /OPERATIONAL INTERVENTION & ACTION CONTROL/i })\n"
+      },
+      {
+        "file": "operations.spec.ts",
+        "line": 28,
+        "test": "interacts with tabs across the operational command workflow",
+        "project": "Mobile Chrome",
+        "status": "passed",
+        "error": ""
+      },
+      {
+        "file": "operations.spec.ts",
+        "line": 50,
+        "test": "loads Tamper-Evident Warning Ledger page and displays SHA-256 verification",
+        "project": "Mobile Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByRole('heading', { name: /TAMPER-EVIDENT WARNING LEDGER/i })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('heading', { name: /TAMPER-EVIDENT WARNING LEDGER/i }) with timeout 5000ms\n  - waiting for getByRole('heading', { name: /TAMPER-EVIDENT WARNING LEDGER/i })\n"
+      },
+      {
+        "file": "risk.spec.ts",
+        "line": 4,
+        "test": "loads the Risk Engine page and renders operational boundary banner",
+        "project": "Desktop Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByRole('heading', { name: 'TRANSPARENT RISK ENGINE' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('heading', { name: 'TRANSPARENT RISK ENGINE' }) with timeout 5000ms\n  - waiting for getByRole('heading', { name: 'TRANSPARENT RISK ENGINE' })\n"
+      },
+      {
+        "file": "risk.spec.ts",
+        "line": 13,
+        "test": "displays model transparency metrics, calibration and predictions roster",
+        "project": "Desktop Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByText('lr-baseline-v1.0.0')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByText('lr-baseline-v1.0.0') with timeout 5000ms\n  - waiting for getByText('lr-baseline-v1.0.0')\n"
+      },
+      {
+        "file": "risk.spec.ts",
+        "line": 27,
+        "test": "filters predictions and inspects explanation modal",
+        "project": "Desktop Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByText('su-miz-aiz-001')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByText('su-miz-aiz-001') with timeout 5000ms\n  - waiting for getByText('su-miz-aiz-001')\n"
+      },
+      {
+        "file": "risk.spec.ts",
+        "line": 4,
+        "test": "loads the Risk Engine page and renders operational boundary banner",
+        "project": "Mobile Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByRole('heading', { name: 'TRANSPARENT RISK ENGINE' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('heading', { name: 'TRANSPARENT RISK ENGINE' }) with timeout 5000ms\n  - waiting for getByRole('heading', { name: 'TRANSPARENT RISK ENGINE' })\n"
+      },
+      {
+        "file": "risk.spec.ts",
+        "line": 13,
+        "test": "displays model transparency metrics, calibration and predictions roster",
+        "project": "Mobile Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByText('lr-baseline-v1.0.0')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByText('lr-baseline-v1.0.0') with timeout 5000ms\n  - waiting for getByText('lr-baseline-v1.0.0')\n"
+      },
+      {
+        "file": "risk.spec.ts",
+        "line": 27,
+        "test": "filters predictions and inspects explanation modal",
+        "project": "Mobile Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByText('su-miz-aiz-001')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByText('su-miz-aiz-001') with timeout 5000ms\n  - waiting for getByText('su-miz-aiz-001')\n"
+      },
+      {
+        "file": "satellite.spec.ts",
+        "line": 4,
+        "test": "loads the Creep Watch page and renders operational boundary banner",
+        "project": "Desktop Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByRole('heading', { name: /SATELLITE & INSAR CHANGE INTELLIGENCE/i })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('heading', { name: /SATELLITE & INSAR CHANGE INTELLIGENCE/i }) with timeout 5000ms\n  - waiting for getByRole('heading', { name: /SATELLITE & INSAR CHANGE INTELLIGENCE/i })\n"
+      },
+      {
+        "file": "satellite.spec.ts",
+        "line": 14,
+        "test": "displays truthful external satellite connectors and anti-fabrication status",
+        "project": "Desktop Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByText(/Upstream Satellite Catalogs & Live Connectors/i)\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByText(/Upstream Satellite Catalogs & Live Connectors/i) with timeout 5000ms\n  - waiting for getByText(/Upstream Satellite Catalogs & Live Connectors/i)\n"
+      },
+      {
+        "file": "satellite.spec.ts",
+        "line": 23,
+        "test": "renders InSAR deformation roster and inspects telemetry modal with LOS disclaimer",
+        "project": "Desktop Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByRole('table', { name: 'InSAR Observations Table' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('table', { name: 'InSAR Observations Table' }) with timeout 5000ms\n  - waiting for getByRole('table', { name: 'InSAR Observations Table' })\n"
+      },
+      {
+        "file": "satellite.spec.ts",
+        "line": 49,
+        "test": "opens InSAR processing job dispatch modal with bounded parameter fields",
+        "project": "Desktop Chrome",
+        "status": "passed",
+        "error": ""
+      },
+      {
+        "file": "satellite.spec.ts",
+        "line": 4,
+        "test": "loads the Creep Watch page and renders operational boundary banner",
+        "project": "Mobile Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByRole('heading', { name: /SATELLITE & INSAR CHANGE INTELLIGENCE/i })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('heading', { name: /SATELLITE & INSAR CHANGE INTELLIGENCE/i }) with timeout 5000ms\n  - waiting for getByRole('heading', { name: /SATELLITE & INSAR CHANGE INTELLIGENCE/i })\n"
+      },
+      {
+        "file": "satellite.spec.ts",
+        "line": 14,
+        "test": "displays truthful external satellite connectors and anti-fabrication status",
+        "project": "Mobile Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByText(/Upstream Satellite Catalogs & Live Connectors/i)\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByText(/Upstream Satellite Catalogs & Live Connectors/i) with timeout 5000ms\n  - waiting for getByText(/Upstream Satellite Catalogs & Live Connectors/i)\n"
+      },
+      {
+        "file": "satellite.spec.ts",
+        "line": 23,
+        "test": "renders InSAR deformation roster and inspects telemetry modal with LOS disclaimer",
+        "project": "Mobile Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByRole('table', { name: 'InSAR Observations Table' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('table', { name: 'InSAR Observations Table' }) with timeout 5000ms\n  - waiting for getByRole('table', { name: 'InSAR Observations Table' })\n"
+      },
+      {
+        "file": "satellite.spec.ts",
+        "line": 49,
+        "test": "opens InSAR processing job dispatch modal with bounded parameter fields",
+        "project": "Mobile Chrome",
+        "status": "timedOut",
+        "error": "Test timeout of 30000ms exceeded."
+      },
+      {
+        "file": "smoke.spec.ts",
+        "line": 4,
+        "test": "loads the command center with correct title and accessibility landmarks",
+        "project": "Desktop Chrome",
+        "status": "failed",
+        "error": "Error: expect(page).toHaveTitle(expected) failed\n\nExpected pattern: /Sentinel NER \u2014 Operational Landslide Intelligence/i\nReceived string:  \"Sentinel NER | \u0930\u093e\u0937\u094d\u091f\u094d\u0930\u0940\u092f \u092d\u0942\u0938\u094d\u0916\u0932\u0928 \u092a\u0942\u0930\u094d\u0935 \u091a\u0947\u0924\u093e\u0935\u0928\u0940 \u092e\u0902\u091a | National Landslide Early Warning Platform\"\nTimeout: 5000ms\n\nCall log:\n  - Expect \"toHaveTitle\" with timeout 5000ms\n    14 \u00d7 locator resolved to <html lang=\"en\" class=\"__variable_11be26 __variable_d0be19 light\">\u2026</html>\n       - unexpected value \"Sentinel NER | \u0930\u093e\u0937\u094d\u091f\u094d\u0930\u0940\u092f \u092d\u0942\u0938\u094d\u0916\u0932\u0928 \u092a\u0942\u0930\u094d\u0935 \u091a\u0947\u0924\u093e\u0935\u0928\u0940 \u092e\u0902\u091a | National Landslide Early Warning Platform\"\n"
+      },
+      {
+        "file": "smoke.spec.ts",
+        "line": 27,
+        "test": "loads the alerts & field connectivity page",
+        "project": "Desktop Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByRole('heading', { name: /Alert Delivery & Field Connectivity/i })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('heading', { name: /Alert Delivery & Field Connectivity/i }) with timeout 5000ms\n  - waiting for getByRole('heading', { name: /Alert Delivery & Field Connectivity/i })\n"
+      },
+      {
+        "file": "smoke.spec.ts",
+        "line": 35,
+        "test": "verifies stage-gated architectural placeholders on private/future routes",
+        "project": "Desktop Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByRole('region', { name: /RBAC Protected Boundary: Warning Ledger/i })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('region', { name: /RBAC Protected Boundary: Warning Ledger/i }) with timeout 5000ms\n  - waiting for getByRole('region', { name: /RBAC Protected Boundary: Warning Ledger/i })\n"
+      },
+      {
+        "file": "smoke.spec.ts",
+        "line": 4,
+        "test": "loads the command center with correct title and accessibility landmarks",
+        "project": "Mobile Chrome",
+        "status": "failed",
+        "error": "Error: expect(page).toHaveTitle(expected) failed\n\nExpected pattern: /Sentinel NER \u2014 Operational Landslide Intelligence/i\nReceived string:  \"Sentinel NER | \u0930\u093e\u0937\u094d\u091f\u094d\u0930\u0940\u092f \u092d\u0942\u0938\u094d\u0916\u0932\u0928 \u092a\u0942\u0930\u094d\u0935 \u091a\u0947\u0924\u093e\u0935\u0928\u0940 \u092e\u0902\u091a | National Landslide Early Warning Platform\"\nTimeout: 5000ms\n\nCall log:\n  - Expect \"toHaveTitle\" with timeout 5000ms\n    14 \u00d7 locator resolved to <html lang=\"en\" class=\"__variable_11be26 __variable_d0be19 light\">\u2026</html>\n       - unexpected value \"Sentinel NER | \u0930\u093e\u0937\u094d\u091f\u094d\u0930\u0940\u092f \u092d\u0942\u0938\u094d\u0916\u0932\u0928 \u092a\u0942\u0930\u094d\u0935 \u091a\u0947\u0924\u093e\u0935\u0928\u0940 \u092e\u0902\u091a | National Landslide Early Warning Platform\"\n"
+      },
+      {
+        "file": "smoke.spec.ts",
+        "line": 27,
+        "test": "loads the alerts & field connectivity page",
+        "project": "Mobile Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByRole('heading', { name: /Alert Delivery & Field Connectivity/i })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('heading', { name: /Alert Delivery & Field Connectivity/i }) with timeout 5000ms\n  - waiting for getByRole('heading', { name: /Alert Delivery & Field Connectivity/i })\n"
+      },
+      {
+        "file": "smoke.spec.ts",
+        "line": 35,
+        "test": "verifies stage-gated architectural placeholders on private/future routes",
+        "project": "Mobile Chrome",
+        "status": "failed",
+        "error": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByRole('region', { name: /RBAC Protected Boundary: Warning Ledger/i })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('region', { name: /RBAC Protected Boundary: Warning Ledger/i }) with timeout 5000ms\n  - waiting for getByRole('region', { name: /RBAC Protected Boundary: Warning Ledger/i })\n"
+      }
+    ]
+  },
+  "data_validation": {
+    "status": "PASS",
+    "source_sha256": "1f3e261371264dfabe3694811f6e9886d4950443e3d752289b6f9933d493665d",
+    "as_of_date": "2026-09-08",
+    "source_rows": 11022,
+    "valid_coordinate_points": 11020,
+    "quarantined": [
+      {
+        "record_uid": "GSI-AS-410",
+        "slide_id": "ASM/WKA/83C09/2016/34",
+        "reason": "source_coordinate_check_failed"
+      },
+      {
+        "record_uid": "GSI-MZ-22139",
+        "slide_id": "MZ/AIZ/84A14/2015/70",
+        "reason": "source_coordinate_check_failed"
+      }
+    ],
+    "single_day_records_imported_to_test_repository": 1347,
+    "records_kept_as_historical_map_only": 9673,
+    "exact_day_range": [
+      "2007-06-16",
+      "2026-07-13"
+    ],
+    "recorded_events_in_previous_30_days": 0,
+    "duplicate_event_reference_rejected": true,
+    "missing_event_time_rejected": true,
+    "api_state_filter_and_full_pagination": "PASS",
+    "risk_without_terrain_inputs": "DATA_INSUFFICIENT",
+    "state_summary": [
+      {
+        "state": "Arunachal Pradesh",
+        "state_code": "AR",
+        "source_rows": 1220,
+        "map_points": 1220,
+        "test_event_records": 30
+      },
+      {
+        "state": "Assam",
+        "state_code": "AS",
+        "source_rows": 857,
+        "map_points": 856,
+        "test_event_records": 155
+      },
+      {
+        "state": "Manipur",
+        "state_code": "MN",
+        "source_rows": 1631,
+        "map_points": 1631,
+        "test_event_records": 39
+      },
+      {
+        "state": "Meghalaya",
+        "state_code": "ML",
+        "source_rows": 1051,
+        "map_points": 1051,
+        "test_event_records": 168
+      },
+      {
+        "state": "Mizoram",
+        "state_code": "MZ",
+        "source_rows": 3487,
+        "map_points": 3486,
+        "test_event_records": 807
+      },
+      {
+        "state": "Nagaland",
+        "state_code": "NL",
+        "source_rows": 1902,
+        "map_points": 1902,
+        "test_event_records": 83
+      },
+      {
+        "state": "Sikkim",
+        "state_code": "SK",
+        "source_rows": 777,
+        "map_points": 777,
+        "test_event_records": 55
+      },
+      {
+        "state": "Tripura",
+        "state_code": "TR",
+        "source_rows": 97,
+        "map_points": 97,
+        "test_event_records": 10
+      }
+    ],
+    "limits": [
+      "Coordinate numeric checks do not verify field location or state/district boundaries.",
+      "Historical district labels need a reviewed mapping to current district IDs.",
+      "No slope, road, drainage, soil, rainfall, training labels or live alerts are supplied.",
+      "Zero recorded recent events does not demonstrate zero risk or complete current coverage.",
+      "Imported rows remain HISTORICAL; day-level time uses an explicit test-only convention."
+    ]
+  }
+}
